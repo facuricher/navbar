@@ -27,6 +27,7 @@ export const IconLogo = styled.div`
     align-items: center;
     font-size: 1.2rem;
     color: #fafafa;
+    padding-left: 1rem;
 `
 
 export const Menu = styled.ul`
@@ -34,6 +35,17 @@ export const Menu = styled.ul`
     display:flex;
     justify-content:center;
     align-items: center;
+
+    @media screen and (max-width:960px) {
+        width:100%;
+        height:90vh;
+        position: absolute;
+        top: 80px;
+        left: ${({click}) => (click ? 0 : "-100%")};
+        flex-direction: column;
+        transition: 0.5s all ease-in;
+        background-color:#072227;
+    }
 `
 
 export const MenuItem =styled.li`
@@ -49,9 +61,26 @@ export const MenuItem =styled.li`
         border-bottom:0.3rem solid #fafafa;
         transition:0.4s ease-in;
     }
+
+    @media screen and (max-width:960px){
+        width:100%;
+        height:100px;
+
+    }
 `
 
 export const MenuItemLink= styled.a`
     text-decoration: none;
     color: #fafafa;
+`
+
+export const IconLogoMobile = styled.div`
+    display: none;
+
+    @media screen and (max-width:960px) {
+        display: flex;
+        color:#fafafa;
+        font-size:  2rem;
+        padding-right:1rem;
+    }
 `
